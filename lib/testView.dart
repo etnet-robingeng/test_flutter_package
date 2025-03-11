@@ -7,7 +7,7 @@ class TestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: FamilyColors.lineFillColor, //
+        backgroundColor: FamilyColors.primaryColor, //
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.blue,
