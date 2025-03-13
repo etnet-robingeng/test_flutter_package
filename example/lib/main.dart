@@ -48,11 +48,16 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     Text('Home View', style: optionStyle),
     Text('Search View', style: optionStyle),
     Text('Profile View', style: optionStyle),
+    Text('Profile 1', style: optionStyle),
   ];
 
-  final List<Widget> icons = [Icon(Icons.home), Icon(Icons.search), Icon(Icons.person)];
-
-  final List<String> labels = ['Home', 'Search', 'Profile'];
+  final List<Widget> icons = [
+    Icon(Icons.flag),
+    Icon(Icons.timer_sharp),
+    Icon(Icons.desktop_mac_outlined),
+    Icon(Icons.attach_money),
+  ];
+  final List<String> labels = ['A', 'B', 'C', 'D'];
 
   void _onItemTapped(int index) {
     setState(() {
