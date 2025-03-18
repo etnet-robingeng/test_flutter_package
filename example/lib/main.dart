@@ -1,8 +1,10 @@
-import 'package:app_family_materials/family_styles.dart';
+import 'package:app_family_materials/materialCustomCheckBox.dart';
+import 'package:app_family_materials/family_colors.dart';
 import 'package:app_family_materials/testView.dart';
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/customNavBottomBar.dart';
-import 'package:app_family_materials/cutomButton.dart';
+import 'package:app_family_materials/customCheckBoxGroup.dart';
+import 'package:app_family_materials/customCheckBox.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,16 +34,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
-  int _counter = 0;
   late TabController _tabController;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   int _selectedIndex = 0;
+  List<String> selectedItems = [];
+  bool _checked = false;
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final List<Widget> bodyView = [
@@ -83,12 +80,39 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       appBar: AppBar(backgroundColor: Theme.of(context).colorScheme.inversePrimary, title: Text(widget.title)),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             bodyView[_selectedIndex],
-            CustomButton(onPressed: _incrementCounter),
-            // const Text('You have pushed the button this many times:'),
-            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+            MaterialCustomCheckbox(
+              items: ['Apple', 'Banana', 'Orange', 'Mango'],
+              onSelectionChanged: (List<String> selected) {
+                setState(() {
+                  selectedItems = selected;
+                });
+              },
+            ),
+            CustomCheckboxGroup(
+              items: ['Apple', 'Banana', 'Orange', 'Mango'],
+              onSelectionChanged: (List<String> selected) {
+                setState(() {
+                  selectedItems = selected;
+                });
+              },
+            ),
+            // CustomCheckbox(value: _checked, onChanged: _onChange),
+            // Padding(
+            //   padding: const EdgeInsets.all(18.0),
+            //   child: SizedBox(
+            //     width: 16,
+            //     height: 16,
+            //     child: CustomCheckbox(strokeWidth: 1, radius: 1, value: _checked, onChanged: _onChange),
+            //   ),
+            // ),
+            // SizedBox(
+            //   width: 30,
+            //   height: 30,
+            //   child: CustomCheckbox(strokeWidth: 3, radius: 3, value: _checked, onChanged: _onChange),
+            // ),
           ],
         ),
       ),
@@ -118,5 +142,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       //   ),
       // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void _onChange(value) {
+    setState(() => _checked = value);
   }
 }

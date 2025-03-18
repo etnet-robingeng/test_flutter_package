@@ -1,4 +1,4 @@
-import 'package:app_family_materials/family_styles.dart';
+import 'package:app_family_materials/family_colors.dart';
 import 'package:flutter/material.dart';
 
 class CircleImageButton extends StatelessWidget {
@@ -20,7 +20,7 @@ class CircleImageButton extends StatelessWidget {
         child: Container(
           height: height,
           width: double.infinity,
-          decoration: BoxDecoration(color: FamilyColors.primaryColor, borderRadius: BorderRadius.circular(30)),
+          decoration: BoxDecoration(color: FamilyColors.getPrimaryColor(600), borderRadius: BorderRadius.circular(30)),
           child:
               loading
                   ? Center(child: CircularProgressIndicator(color: Colors.white))

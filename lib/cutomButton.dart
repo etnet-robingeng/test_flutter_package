@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'family_styles.dart';
+import 'family_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final Color buttonColor;
@@ -13,8 +13,8 @@ class CustomButton extends StatelessWidget {
 
   const CustomButton(
       {super.key,
-        this.buttonColor = FamilyColors.primaryColor,
-        this.textColor = FamilyColors.norTextColors,
+        this.buttonColor = FamilyColors.primary400,
+        this.textColor = FamilyColors.primary50,
         required this.onPressed,
         this.width = 150.0,
         this.height = 50.0,
@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(color: buttonColor, borderRadius: BorderRadius.circular(50)),
+        decoration: BoxDecoration(color: buttonColor, borderRadius: BorderRadius.circular(8)),
         child: loading
             ? Center(
           child: CircularProgressIndicator(),

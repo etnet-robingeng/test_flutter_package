@@ -1,4 +1,4 @@
-import 'package:app_family_materials/family_styles.dart';
+import 'package:app_family_materials/family_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'family_sizes.dart';
@@ -9,14 +9,16 @@ class FamilyThemes {
     primarySwatch: Colors.yellow,
     textTheme: TextTheme(
       titleMedium: TextStyle(
-        fontSize: FamilySizes.normalFontSize,
+        fontSize: FamilySizesHeader.fontSizeL,
         fontWeight: FontWeight.bold,
-        color: FamilyColors.norTextColors,
+        color: FamilyColors.primary700,
+        fontFamily: 'PingFang TC',
       ),
       bodyMedium: TextStyle(
-        fontSize: FamilySizes.normalFontSize,
+        fontSize: FamilySizesBody.fontSizeM,
         fontWeight: FontWeight.normal,
-        color: FamilyColors.norTextColors,
+        color: FamilyColors.primary500,
+        fontFamily: 'PingFang TC',
       ),
       displayLarge: TextStyle(fontSize: 96, fontWeight: FontWeight.w300, color: Colors.black),
       displayMedium: TextStyle(fontSize: 60, fontWeight: FontWeight.w400, color: Colors.black),
@@ -45,14 +47,16 @@ class FamilyThemes {
     primarySwatch: Colors.grey,
     textTheme: TextTheme(
       titleMedium: TextStyle(
-        fontSize: FamilySizes.normalFontSize,
+        fontSize: FamilySizesHeader.fontSizeL,
         fontWeight: FontWeight.bold,
-        color: FamilyColors.darkTextColors,
+        color: FamilyColors.primary500,
+        fontFamily: 'PingFang TC',
       ),
       bodyMedium: TextStyle(
-        fontSize: FamilySizes.normalFontSize,
+        fontSize: FamilySizesBody.fontSizeM,
         fontWeight: FontWeight.normal,
-        color: FamilyColors.darkTextColors,
+        color: FamilyColors.primary700,
+        fontFamily: 'PingFang TC',
       ),
       displayLarge: TextStyle(fontSize: 96, fontWeight: FontWeight.w300, color: Colors.black),
       displayMedium: TextStyle(fontSize: 60, fontWeight: FontWeight.w400, color: Colors.black),

@@ -1,4 +1,4 @@
-import 'package:app_family_materials/family_styles.dart';
+import 'package:app_family_materials/family_colors.dart';
 import 'package:flutter/material.dart';
 
 class TestView extends StatelessWidget {
@@ -7,7 +7,7 @@ class TestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: FamilyColors.primaryColor, //
+        backgroundColor: FamilyColors.primary600, //
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.blue,
