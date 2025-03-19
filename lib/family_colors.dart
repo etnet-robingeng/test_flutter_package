@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show Color, Colors;
+import 'package:flutter/material.dart' show Color;
 
 class FamilyColors {
   static const Color primary50 = Color(0xffebf1fe);

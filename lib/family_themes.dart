@@ -1,10 +1,28 @@
 import 'package:app_family_materials/family_colors.dart';
+import 'package:app_family_materials/family_textStyle.dart';
 import 'package:flutter/material.dart';
 
 import 'family_sizes.dart';
 
 class FamilyThemes {
   // MaterialApp themes
+  static ThemeData lightTheme = ThemeData(
+    textTheme: TextTheme(
+      displayLarge: FamilyTextStyle.DisplaySemiBold,
+      displayMedium: FamilyTextStyle.DisplayMedium,
+      displaySmall: FamilyTextStyle.DisplayRegular,
+      headlineLarge: FamilyTextStyle.HeadlineSemiBold,
+      headlineMedium: FamilyTextStyle.HeadlineMedium,
+      headlineSmall: FamilyTextStyle.HeadlineRegular,
+      titleLarge: FamilyTextStyle.TitleSemiBold,
+      titleMedium: FamilyTextStyle.TitleMedium,
+      titleSmall: FamilyTextStyle.TitleRegular,
+      bodyLarge: FamilyTextStyle.LBodyRegular,
+      bodyMedium: FamilyTextStyle.MBodyRegular,
+      bodySmall: FamilyTextStyle.SBodyRegular,
+    )
+  );
+
   static ThemeData norTheme = ThemeData(
     primarySwatch: Colors.yellow,
     textTheme: TextTheme(
