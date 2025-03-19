@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart' show TextStyle, FontWeight;
 import 'family_sizes.dart';
 
@@ -67,66 +69,66 @@ class FamilyTextStyle {
     fontFamily: fontFamily,
   );
 
-  static const TextStyle TitleRegular = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeS,
+  static const TextStyle SHeadlineRegular = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeS,
     fontWeight: FontWeight.w400,
-    height: FamilySizeHeaderHeight.fontHeightS,
+    height: FamilySizeHeadlineHeight.fontHeightS,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle TitleMedium = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeS,
+  static const TextStyle SHeadlineMedium = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeS,
     fontWeight: FontWeight.w500,
-    height: FamilySizeHeaderHeight.fontHeightS,
+    height: FamilySizeHeadlineHeight.fontHeightS,
     fontFamily: fontFamily,
   );
   
-  static const TextStyle TitleSemiBold = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeS,
+  static const TextStyle SHeadlineSemiBold = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeS,
     fontWeight: FontWeight.w600,
-    height: FamilySizeHeaderHeight.fontHeightS,
+    height: FamilySizeHeadlineHeight.fontHeightS,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle HeadlineRegular = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeM,
+  static const TextStyle MHeadlineRegular = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeM,
     fontWeight: FontWeight.w400,
-    height: FamilySizeHeaderHeight.fontHeightM,
+    height: FamilySizeHeadlineHeight.fontHeightM,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle HeadlineMedium = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeM,
+  static const TextStyle MHeadlineMedium = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeM,
     fontWeight: FontWeight.w500,
-    height: FamilySizeHeaderHeight.fontHeightM,
+    height: FamilySizeHeadlineHeight.fontHeightM,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle HeadlineSemiBold = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeM,
+  static const TextStyle MHeadlineSemiBold = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeM,
     fontWeight: FontWeight.w600,
-    height: FamilySizeHeaderHeight.fontHeightM,
+    height: FamilySizeHeadlineHeight.fontHeightM,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle DisplayRegular = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeL,
+  static const TextStyle LHeadlineRegular = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeL,
     fontWeight: FontWeight.w400,
-    height: FamilySizeHeaderHeight.fontHeightL,
+    height: FamilySizeHeadlineHeight.fontHeightL,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle DisplayMedium = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeL,
+  static const TextStyle LHeadlineMedium = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeL,
     fontWeight: FontWeight.w500,
-    height: FamilySizeHeaderHeight.fontHeightL,
+    height: FamilySizeHeadlineHeight.fontHeightL,
     fontFamily: fontFamily,
   );
 
-  static const TextStyle DisplaySemiBold = TextStyle(
-    fontSize: FamilySizesHeader.fontSizeL,
+  static const TextStyle LHeadlineSemiBold = TextStyle(
+    fontSize: FamilySizesHeadline.fontSizeL,
     fontWeight: FontWeight.w600,
-    height: FamilySizeHeaderHeight.fontHeightL,
+    height: FamilySizeHeadlineHeight.fontHeightL,
     fontFamily: fontFamily,
   );
 }

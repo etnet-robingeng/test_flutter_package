@@ -17,7 +17,7 @@ class _CheckboxPageState extends State<CheckboxPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Checkbox Examples'),
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
         child: Padding(
