@@ -10,7 +10,7 @@ class TextStylePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Text Styles'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(
         child: Padding(
