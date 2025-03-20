@@ -15,26 +15,26 @@ class ThemeStylePage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            _buildThemePreview('Family Colors 50', FamilyThemes.familyColors50Theme),
-            _buildThemePreview('Family Colors 100', FamilyThemes.familyColors100Theme),
-            _buildThemePreview('Family Colors 200', FamilyThemes.familyColors200Theme),
-            _buildThemePreview('Family Colors 300', FamilyThemes.familyColors300Theme),
-            _buildThemePreview('Family Colors 400', FamilyThemes.familyColors400Theme),
-            _buildThemePreview('Family Colors 500', FamilyThemes.familyColors500Theme),
-            _buildThemePreview('Family Colors 600', FamilyThemes.familyColors600Theme),
-            _buildThemePreview('Family Colors 700', FamilyThemes.familyColors700Theme),
-            _buildThemePreview('Family Colors 800', FamilyThemes.familyColors800Theme),
-            _buildThemePreview('Family Colors 900', FamilyThemes.familyColors900Theme),
-            _buildThemePreview('Deep Purple Theme', FamilyThemes.deepPurpleTheme),
-            _buildThemePreview('Nor Theme', FamilyThemes.norTheme),
-            _buildThemePreview('Dark Theme', FamilyThemes.darkTheme),
+            _buildThemePreview('Family Colors 50', FamilyThemes.familyColors50),
+            _buildThemePreview('Family Colors 100', FamilyThemes.familyColors100),
+            _buildThemePreview('Family Colors 200', FamilyThemes.familyColors200),
+            _buildThemePreview('Family Colors 300', FamilyThemes.familyColors300),
+            _buildThemePreview('Family Colors 400', FamilyThemes.familyColors400),
+            _buildThemePreview('Family Colors 500', FamilyThemes.familyColors500),
+            _buildThemePreview('Family Colors 600', FamilyThemes.familyColors600),
+            _buildThemePreview('Family Colors 700', FamilyThemes.familyColors700),
+            _buildThemePreview('Family Colors 800', FamilyThemes.familyColors800),
+            _buildThemePreview('Family Colors 900', FamilyThemes.familyColors900),
+            _buildThemePreview('Deep Purple Theme', FamilyThemes.deepPurple),
+            _buildThemePreview('Nor Theme', FamilyThemes.nor),
+            _buildThemePreview('Dark Theme', FamilyThemes.dark),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildThemePreview(String title, ThemeData theme) {
+  Widget _buildThemePreview(String title, FamilyThemes theme) {
     return Card(
       child: InkWell(
         onTap: () {
@@ -45,13 +45,19 @@ class ThemeStylePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: theme.textTheme.headlineMedium),
+              Text(title, style: theme.theme.textTheme.headlineMedium),
               const SizedBox(height: 8),
-              _buildColorRow('Primary', theme.colorScheme.primary, theme),
+              _buildColorRow('Primary', theme.theme.colorScheme.primary, theme.theme),
               const SizedBox(height: 4),
-              _buildColorRow('Secondary', theme.colorScheme.secondary, theme),
+              _buildColorRow('Secondary', theme.theme.colorScheme.secondary, theme.theme),
               const SizedBox(height: 4), 
-              _buildColorRow('Error', theme.colorScheme.error, theme),
+              _buildColorRow('Error', theme.theme.colorScheme.error, theme.theme),
+              const SizedBox(height: 4),
+              _buildColorRow('Warning', theme.warning, theme.theme),
+              const SizedBox(height: 4),
+              _buildColorRow('Success', theme.success, theme.theme),
+              const SizedBox(height: 4),
+              _buildColorRow('System', theme.system, theme.theme),
             ],
           ),
         ),

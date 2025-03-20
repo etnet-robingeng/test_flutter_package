@@ -77,6 +77,17 @@ class FamilyColors {
   static const Color neutral900 = Color(0xff535862);
   static const Color neutral1000 = Color(0xff000000);
 
+  static const Color system50 = Color(0xffE6F2FF);
+  static const Color system100 = Color(0xffB0D6FF);
+  static const Color system200 = Color(0xff8AC2FF);
+  static const Color system300 = Color(0xff54A6FF);
+  static const Color system400 = Color(0xff3395FF);
+  static const Color system500 = Color(0xff007AFF);
+  static const Color system600 = Color(0xff006FE8);
+  static const Color system700 = Color(0xff0057B5);
+  static const Color system800 = Color(0xff00438C);
+  static const Color system900 = Color(0xff00336B);
+
   //
   static const Color shadowA3 = Color(0x080A0D12);
   static const Color shadowA5 = Color(0x0D0A0D12);

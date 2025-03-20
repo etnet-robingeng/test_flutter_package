@@ -25,17 +25,17 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     // Initialize the ThemeController with the default theme
-    ThemeController.themeNotifier.value = FamilyThemes.deepPurpleTheme;
+    ThemeController.themeNotifier.value = FamilyThemes.deepPurple;
   }
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<ThemeData>(
+    return ValueListenableBuilder<FamilyThemes>(
       valueListenable: ThemeController.themeNotifier,
       builder: (context, theme, child) {
         return MaterialApp(
           title: title,
-          theme: theme,
+          theme: theme.theme,
           home: const MyHomePage(),
         );
       },
