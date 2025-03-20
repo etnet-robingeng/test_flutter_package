@@ -62,7 +62,29 @@ class ThemeStylePage extends StatelessWidget {
   Widget _buildColorRow(String colorName, Color color, ThemeData theme) {
     return Row(
       children: [
-        Container(width: 20, height: 20, color: color),
+        Container(
+          width: 40,
+          height: 20,
+          color: color,
+          child: Center(
+            child: Text(
+              'Aa',
+              style: TextStyle(color: Colors.white, fontSize: 12),
+            ),
+          ),
+        ),
+        const SizedBox(width: 8),
+        Container(
+          width: 40,
+          height: 20,
+          color: color,
+          child: Center(
+            child: Text(
+              'Aa',
+              style: TextStyle(color: Colors.black, fontSize: 12),
+            ),
+          ),
+        ),
         const SizedBox(width: 8),
         Text(colorName, style: theme.textTheme.bodyMedium),
       ],
