@@ -11,7 +11,7 @@ class ShadowsBlursStylePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Shadows & Blurs'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Center(
         child: Container(
