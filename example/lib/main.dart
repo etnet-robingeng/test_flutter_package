@@ -62,36 +62,24 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          NavigationListTile(
-            title: 'Checkboxes',
-            destination: const CheckboxPage(),
+          _navigationListTile(
+            'Checkboxes',
+            const CheckboxPage(),
           ),
-          NavigationListTile(
-            title: 'Text Styles',
-            destination: const TextStylePage(),
+          _navigationListTile(
+            'Text Styles',
+            const TextStylePage(),
           ),
-          NavigationListTile(
-            title: 'Theme Styles',
-            destination: const ThemeStylePage(),
+          _navigationListTile(
+            'Theme Styles',
+            const ThemeStylePage(),
           ),
         ],
       ),
     );
   }
-}
 
-class NavigationListTile extends StatelessWidget {
-  final String title;
-  final Widget destination;
-
-  const NavigationListTile({
-    super.key,
-    required this.title,
-    required this.destination,
-  });
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _navigationListTile(String title, Widget destination) {
     return ListTile(
       trailing: const Icon(Icons.arrow_forward_ios),
       title: Text(title),
