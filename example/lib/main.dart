@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/family_themes.dart';
 import 'controllers/theme_controller.dart';
-import 'sections/checkbox.dart';
+import 'sections/checkbox_style.dart';
 import 'sections/text_style.dart';
 import 'sections/theme_style.dart';
+import 'sections/shadows_blurs_style.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -73,6 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
           _navigationListTile(
             'Theme Styles',
             const ThemeStylePage(),
+          ),
+          _navigationListTile(
+            'Shadows & Blurs',
+            const ShadowsBlursStylePage(),
           ),
         ],
       ),

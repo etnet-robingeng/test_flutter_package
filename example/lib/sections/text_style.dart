@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_family_materials/family_textStyle.dart';
+import 'package:app_family_materials/family_textStyles.dart';
 
 class TextStylePage extends StatelessWidget {
   const TextStylePage({super.key});

@@ -1,4 +1,4 @@
-import 'package:app_family_materials/family_textStyle.dart';
+import 'package:app_family_materials/family_textStyles.dart';
 import 'package:app_family_materials/family_colors.dart';
 import 'package:flutter/material.dart';
 

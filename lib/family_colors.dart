@@ -77,6 +77,16 @@ class FamilyColors {
   static const Color neutral900 = Color(0xff535862);
   static const Color neutral1000 = Color(0xff000000);
 
+  //
+  static const Color shadowA3 = Color(0x080A0D12);
+  static const Color shadowA5 = Color(0x0D0A0D12);
+  static const Color shadowA6 = Color(0x0F0A0D12);
+  static const Color shadowA8 = Color(0x140A0D12);
+  static const Color shadowA10 = Color(0x1A0A0D12);
+  static const Color shadowA12 = Color(0x240A0D12);
+  static const Color shadowA14 = Color(0x240A0D12);
+  static const Color shadowA18 = Color(0x2E0A0D12);
+
   static final Map<int, Color> primaryColors = {
     50: primary50,
     100: primary100,
