@@ -9,7 +9,7 @@ class CustomCheckboxGroup extends StatefulWidget {
   final TextStyle labelStyle;
 
   CustomCheckboxGroup({super.key, required this.items, required this.onSelectionChanged, TextStyle? labelStyle})
-    : labelStyle = labelStyle ?? TextStyle(color: FamilyColors.neutral500, fontFamily: 'PingFang TC');
+    : labelStyle = labelStyle ?? TextStyle(color: FamilyColors.neutral500, fontFamily: 'PingFang TC', fontSize: 14);
 
   @override
   CustomCheckboxGroupState createState() => CustomCheckboxGroupState();

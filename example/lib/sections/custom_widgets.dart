@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/customCheckBoxGroup.dart';
-import 'package:app_family_materials/materialCustomCheckBox.dart';
+import 'package:app_family_materials/customRadioBtnGroup.dart';
+import 'package:app_family_materials/customButton.dart';
 
-class CheckboxPage extends StatefulWidget {
-  const CheckboxPage({super.key});
+class CustomWidgetsShowPage extends StatefulWidget {
+  const CustomWidgetsShowPage({super.key});
 
   @override
-  State<CheckboxPage> createState() => _CheckboxPageState();
+  State<CustomWidgetsShowPage> createState() => _CustomWidgetsShowPageState();
 }
 
-class _CheckboxPageState extends State<CheckboxPage> {
+class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
   List<String> selectedItems = [];
+  String selectedItem = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Checkbox Examples'),
+        title: const Text('Widgets Exhibition'),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(
@@ -25,13 +27,14 @@ class _CheckboxPageState extends State<CheckboxPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MaterialCustomCheckbox(
+              CustomRadioBtnGroup(
                 items: ['Apple', 'Banana', 'Orange', 'Mango'],
-                onSelectionChanged: (List<String> selected) {
+                onSelectionChanged: (String selected) {
                   setState(() {
-                    selectedItems = selected;
+                    selectedItem = selected;
                   });
                 },
+                defaultValue: 'Banana',
               ),
               CustomCheckboxGroup(
                 items: ['Apple', 'Banana', 'Orange', 'Mango'],
@@ -41,6 +44,7 @@ class _CheckboxPageState extends State<CheckboxPage> {
                   });
                 },
               ),
+              CustomButton(onPressed: () {}),
             ],
           ),
         ),
