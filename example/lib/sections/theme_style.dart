@@ -15,6 +15,8 @@ class ThemeStylePage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
+            Text('Light Theme Styles', style: Theme.of(context).textTheme.headlineLarge),
+            const SizedBox(height: 16),
             _buildThemePreview('Family Colors 50', FamilyThemes.familyColors50),
             _buildThemePreview('Family Colors 100', FamilyThemes.familyColors100),
             _buildThemePreview('Family Colors 200', FamilyThemes.familyColors200),
@@ -26,6 +28,9 @@ class ThemeStylePage extends StatelessWidget {
             _buildThemePreview('Family Colors 800', FamilyThemes.familyColors800),
             _buildThemePreview('Family Colors 900', FamilyThemes.familyColors900),
             _buildThemePreview('Deep Purple Theme', FamilyThemes.deepPurple),
+            const SizedBox(height: 16),
+            Text('Dark Theme Styles', style: Theme.of(context).textTheme. headlineLarge),
+            const SizedBox(height: 16),
             _buildThemePreview('Nor Theme', FamilyThemes.nor),
             _buildThemePreview('Dark Theme', FamilyThemes.dark),
           ],
@@ -45,7 +50,7 @@ class ThemeStylePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: theme.theme.textTheme.headlineMedium),
+              Text(title, style: theme.theme.textTheme.headlineSmall),
               const SizedBox(height: 8),
               _buildColorRow('Primary', theme.theme.colorScheme.primary, theme.theme),
               const SizedBox(height: 4),
