@@ -19,8 +19,8 @@ class FamilyThemes {
     bodySmall: FamilyTextStyle.SBodyRegular,
   );
 
-  // MaterialApp themes
-  static FamilyThemes familyColors50 = FamilyThemes(
+  // MaterialApp light themes
+  static FamilyThemes familyColors50Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -36,7 +36,7 @@ class FamilyThemes {
     system: FamilyColors.system50,
   );
 
-  static FamilyThemes familyColors100 = FamilyThemes(
+  static FamilyThemes familyColors100Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -52,7 +52,7 @@ class FamilyThemes {
     system: FamilyColors.system100,
   );
 
-  static FamilyThemes familyColors200 = FamilyThemes(
+  static FamilyThemes familyColors200Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -68,7 +68,7 @@ class FamilyThemes {
     system: FamilyColors.system200,
   );
 
-  static FamilyThemes familyColors300 = FamilyThemes(
+  static FamilyThemes familyColors300Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -84,7 +84,7 @@ class FamilyThemes {
     system: FamilyColors.system300,
   );
 
-  static FamilyThemes familyColors400 = FamilyThemes(
+  static FamilyThemes familyColors400Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -100,7 +100,7 @@ class FamilyThemes {
     system: FamilyColors.system400,
   );
 
-  static FamilyThemes familyColors500 = FamilyThemes(
+  static FamilyThemes familyColors500Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -116,7 +116,7 @@ class FamilyThemes {
     system: FamilyColors.system500,
   );
 
-  static FamilyThemes familyColors600 = FamilyThemes(
+  static FamilyThemes familyColors600Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -132,7 +132,7 @@ class FamilyThemes {
     system: FamilyColors.system600,
   );
 
-  static FamilyThemes familyColors700 = FamilyThemes(
+  static FamilyThemes familyColors700Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -148,7 +148,7 @@ class FamilyThemes {
     system: FamilyColors.system700,
   );
 
-  static FamilyThemes familyColors800 = FamilyThemes(
+  static FamilyThemes familyColors800Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -164,7 +164,7 @@ class FamilyThemes {
     system: FamilyColors.system800,
   );
 
-  static FamilyThemes familyColors900 = FamilyThemes(
+  static FamilyThemes familyColors900Light = FamilyThemes(
     theme: ThemeData(
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -189,6 +189,177 @@ class FamilyThemes {
     warning: FamilyColors.warning500,
     success: FamilyColors.success500,
     system: FamilyColors.system500,
+  );
+
+  // MaterialApp dark themes
+  static FamilyThemes familyColors50Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary50,
+        primary: FamilyColors.primary50,
+        secondary: FamilyColors.secondary50,
+        error: FamilyColors.error50,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning50,
+    success: FamilyColors.success50,
+    system: FamilyColors.system50,
+  );
+
+  static FamilyThemes familyColors100Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary100,
+        primary: FamilyColors.primary100,
+        secondary: FamilyColors.secondary100,
+        error: FamilyColors.error100,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning100,
+    success: FamilyColors.success100,
+    system: FamilyColors.system100,
+  );
+
+  static FamilyThemes familyColors200Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary200,
+        primary: FamilyColors.primary200,
+        secondary: FamilyColors.secondary200,
+        error: FamilyColors.error200,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning200,
+    success: FamilyColors.success200,
+    system: FamilyColors.system200,
+  );
+
+  static FamilyThemes familyColors300Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary300,
+        primary: FamilyColors.primary300,
+        secondary: FamilyColors.secondary300,
+        error: FamilyColors.error300,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning300,
+    success: FamilyColors.success300,
+    system: FamilyColors.system300,
+  );
+
+  static FamilyThemes familyColors400Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary400,
+        primary: FamilyColors.primary400,
+        secondary: FamilyColors.secondary400,
+        error: FamilyColors.error400,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning400,
+    success: FamilyColors.success400,
+    system: FamilyColors.system400,
+  );
+
+  static FamilyThemes familyColors500Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary500,
+        primary: FamilyColors.primary500,
+        secondary: FamilyColors.secondary500,
+        error: FamilyColors.error500,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning500,
+    success: FamilyColors.success500,
+    system: FamilyColors.system500,
+  );
+
+  static FamilyThemes familyColors600Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary600,
+        primary: FamilyColors.primary600,
+        secondary: FamilyColors.secondary600,
+        error: FamilyColors.error600,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning600,
+    success: FamilyColors.success600,
+    system: FamilyColors.system600,
+  );
+
+  static FamilyThemes familyColors700Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary700,
+        primary: FamilyColors.primary700,
+        secondary: FamilyColors.secondary700,
+        error: FamilyColors.error700,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning700,
+    success: FamilyColors.success700,
+    system: FamilyColors.system700,
+  );
+
+  static FamilyThemes familyColors800Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary800,
+        primary: FamilyColors.primary800,
+        secondary: FamilyColors.secondary800,
+        error: FamilyColors.error800,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning800,
+    success: FamilyColors.success800,
+    system: FamilyColors.system800,
+  );
+
+  static FamilyThemes familyColors900Dark = FamilyThemes(
+    theme: ThemeData(
+      textTheme: textTheme,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: FamilyColors.primary900,
+        primary: FamilyColors.primary900,
+        secondary: FamilyColors.secondary900,
+        error: FamilyColors.error900,
+        brightness: Brightness.dark,
+      ),
+      canvasColor: FamilyColors.neutral50,
+    ),
+    warning: FamilyColors.warning900,
+    success: FamilyColors.success900,
+    system: FamilyColors.system900,
   );
 
   static FamilyThemes nor = FamilyThemes(
