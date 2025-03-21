@@ -17,7 +17,7 @@ class ShadowsBlursStylePage extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(0),
           child: GridView.count(
-            crossAxisCount: max(1, min(7, (MediaQuery.of(context).size.width / 200).floor())),
+            crossAxisCount: max(1, min(7, (MediaQuery.of(context).size.width / 150).floor())),
             mainAxisSpacing: 0,
             crossAxisSpacing: 0,
             children: [
@@ -39,8 +39,8 @@ class ShadowsBlursStylePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(32),
       child: Container(
-        height: 100,
-        width: 100,
+        height: 50,
+        width: 50,
         decoration: BoxDecoration(
           color: FamilyColors.neutral0,
           borderRadius: BorderRadius.circular(12),
