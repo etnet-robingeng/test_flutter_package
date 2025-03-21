@@ -10,16 +10,19 @@ class CustomButton extends StatelessWidget {
   final double height;
   final bool loading;
   final double textSize;
+  final String strValue;
 
-  const CustomButton(
-      {super.key,
-        this.buttonColor = FamilyColors.primary400,
-        this.textColor = FamilyColors.primary50,
-        required this.onPressed,
-        this.width = 150.0,
-        this.height = 50.0,
-        this.loading = false,
-        this.textSize = 20.0});
+  const CustomButton({
+    super.key,
+    this.buttonColor = FamilyColors.primary400,
+    this.textColor = FamilyColors.primary50,
+    required this.onPressed,
+    this.width = 150.0,
+    this.height = 50.0,
+    this.loading = false,
+    this.textSize = 20.0,
+    this.strValue = 'CustomButton',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +31,8 @@ class CustomButton extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(color: buttonColor, borderRadius: BorderRadius.circular(4)),
-        child: loading
-            ? Center(
-          child: CircularProgressIndicator(),
-        )
-            : Center(
-          child: Text('CustomButton'),
-        ),
+        decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(4)),
+        child: loading ? Center(child: CircularProgressIndicator()) : Center(child: Text(strValue)),
       ),
     );
   }

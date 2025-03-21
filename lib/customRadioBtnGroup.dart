@@ -15,7 +15,7 @@ class CustomRadioBtnGroup extends StatefulWidget {
     required this.onSelectionChanged,
     this.defaultValue,
     TextStyle? labelStyle,
-  }) : labelStyle = labelStyle ?? TextStyle(color: FamilyColors.neutral500, fontFamily: 'PingFang TC', fontSize: 14);
+  }) : labelStyle = labelStyle ?? TextStyle(color: FamilyColors.neutral500);
 
   @override
   CustomRadioBtnGroupState createState() => CustomRadioBtnGroupState();

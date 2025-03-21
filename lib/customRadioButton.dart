@@ -4,27 +4,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 
-import 'family_colors.dart';
-
 class CustomRadioButton extends LeafRenderObjectWidget {
   const CustomRadioButton({
     super.key,
     this.strokeWidth = 20.0,
     this.value = false,
-    this.strokeColor = FamilyColors.primary500,
+    this.strokeColor,
+    this.canvasColor,
+    this.centerColor,
     this.radius = 10.0,
     this.onChanged,
   });
 
   final double strokeWidth;
-  final Color strokeColor;
+  final Color? strokeColor;
+  final Color? canvasColor;
+  final Color? centerColor;
   final bool value;
   final double radius;
   final ValueChanged<bool>? onChanged;
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return RenderCustomRadioButton(strokeWidth, strokeColor, value, radius, onChanged);
+    return RenderCustomRadioButton(
+      strokeWidth,
+      strokeColor ?? Theme.of(context).colorScheme.primary,
+      canvasColor ?? Theme.of(context).canvasColor,
+      centerColor ?? Theme.of(context).colorScheme.surface,
+      value,
+      radius,
+      onChanged,
+    );
   }
 
   @override
@@ -34,7 +44,9 @@ class CustomRadioButton extends LeafRenderObjectWidget {
     }
     renderObject
       ..strokeWidth = strokeWidth
-      ..strokeColor = strokeColor
+      ..strokeColor = strokeColor ?? Theme.of(context).colorScheme.primary
+      ..canvasColor = canvasColor ?? Theme.of(context).canvasColor
+      ..centerColor = centerColor ?? Theme.of(context).colorScheme.surface
       ..radius = radius
       ..value = value
       ..onChanged = onChanged;
@@ -46,10 +58,20 @@ class RenderCustomRadioButton extends RenderBox with RenderObjectAnimationMixin 
   int pointerId = -1;
   double strokeWidth;
   Color strokeColor;
+  Color canvasColor;
+  Color centerColor;
   double radius;
   ValueChanged<bool>? onChanged;
 
-  RenderCustomRadioButton(this.strokeWidth, this.strokeColor, this.value, this.radius, this.onChanged) {
+  RenderCustomRadioButton(
+    this.strokeWidth,
+    this.strokeColor,
+    this.canvasColor,
+    this.centerColor,
+    this.value,
+    this.radius,
+    this.onChanged,
+  ) {
     progress = value ? 1 : 0;
   }
 
@@ -71,7 +93,7 @@ class RenderCustomRadioButton extends RenderBox with RenderObjectAnimationMixin 
     if (progress > bgAnimationInterval) {
       final paint =
           Paint()
-            ..color = FamilyColors.primary500
+            ..color = strokeColor
             ..isAntiAlias = true
             ..style = PaintingStyle.fill;
 
@@ -80,7 +102,7 @@ class RenderCustomRadioButton extends RenderBox with RenderObjectAnimationMixin 
     } else {
       final paint =
           Paint()
-            ..color = FamilyColors.neutral50
+            ..color = canvasColor
             ..isAntiAlias = true
             ..style = PaintingStyle.stroke
             ..strokeWidth = 1.0;
@@ -95,7 +117,7 @@ class RenderCustomRadioButton extends RenderBox with RenderObjectAnimationMixin 
 
       final paint =
           Paint()
-            ..color = FamilyColors.neutral0.withValues(alpha: animationProgress)
+            ..color = centerColor
             ..isAntiAlias = true
             ..style = PaintingStyle.fill;
 

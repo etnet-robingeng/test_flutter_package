@@ -1,36 +1,34 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 
-import 'family_colors.dart';
-
 class CustomCheckbox extends LeafRenderObjectWidget {
   const CustomCheckbox({
     super.key,
-    this.strokeWidth = 2.0,
+    this.tickWidth = 2.0,
     this.value = false,
-    this.strokeColor = FamilyColors.neutral0,
-    this.fillColor = FamilyColors.primary500,
+    this.canvasColor,
+    this.fillColor,
+    this.tickColor,
     this.radius = 4.0,
     this.onChanged,
   });
 
-  final double strokeWidth; // "tick" width
-  final Color strokeColor; //  "tick" color
+  final double tickWidth; // "tick" width
+  final Color? tickColor; //  "tick" color
+  final Color? canvasColor; //  border color
   final Color? fillColor;
   final bool value;
   final double radius;
   final ValueChanged<bool>? onChanged;
 
-
   @override
   RenderObject createRenderObject(BuildContext context) {
     return RenderCustomCheckbox(
-      strokeWidth,
-      strokeColor,
-      fillColor ?? Theme.of(context).primaryColor,
+      tickWidth,
+      fillColor ?? Theme.of(context).colorScheme.primary,
+      tickColor ?? Theme.of(context).colorScheme.surface,
+      canvasColor ?? Theme.of(context).canvasColor,
       value,
       radius,
       onChanged,
@@ -43,9 +41,10 @@ class CustomCheckbox extends LeafRenderObjectWidget {
       renderObject.animationStatus = value ? AnimationStatus.forward : AnimationStatus.reverse;
     }
     renderObject
-      ..strokeWidth = strokeWidth
-      ..strokeColor = strokeColor
-      ..fillColor = fillColor ?? Theme.of(context).primaryColor
+      ..tickWidth = tickWidth
+      ..fillColor = fillColor ?? Theme.of(context).colorScheme.primary
+      ..tickColor = tickColor ?? Theme.of(context).colorScheme.surface
+      ..canvasColor = canvasColor ?? Theme.of(context).canvasColor
       ..radius = radius
       ..value = value
       ..onChanged = onChanged;
@@ -55,13 +54,22 @@ class CustomCheckbox extends LeafRenderObjectWidget {
 class RenderCustomCheckbox extends RenderBox with RenderObjectAnimationMixin {
   bool value;
   int pointerId = -1;
-  double strokeWidth;
-  Color strokeColor;
+  double tickWidth;
+  Color tickColor;
   Color fillColor;
+  Color canvasColor;
   double radius;
   ValueChanged<bool>? onChanged;
 
-  RenderCustomCheckbox(this.strokeWidth, this.strokeColor, this.fillColor, this.value, this.radius, this.onChanged) {
+  RenderCustomCheckbox(
+    this.tickWidth,
+    this.tickColor,
+    this.fillColor,
+    this.canvasColor,
+    this.value,
+    this.radius,
+    this.onChanged,
+  ) {
     progress = value ? 1 : 0;
   }
 
@@ -78,38 +86,36 @@ class RenderCustomCheckbox extends RenderBox with RenderObjectAnimationMixin {
   }
 
   void _drawBackground(PaintingContext context, Rect rect) {
-    Color color = value ? fillColor : FamilyColors.neutral50;
-    var paint =
-        Paint()
-          ..isAntiAlias = true
-          ..style =
-              PaintingStyle
-                  .fill
-          ..strokeWidth = 1.0
-          ..color = color;
+    final rrect = RRect.fromRectXY(rect, radius, radius);
 
-    final outer = RRect.fromRectXY(rect, radius, radius);
-    var rects = [rect.inflate(-1.0), Rect.fromCenter(center: rect.center, width: 0, height: 0)];
-    var rectProgress = Rect.lerp(rects[0], rects[1], min(progress, bgAnimationInterval) / bgAnimationInterval)!;
+    if (progress > bgAnimationInterval) {
+      final paint =
+          Paint()
+            ..color = fillColor
+            ..isAntiAlias = true
+            ..style = PaintingStyle.fill;
 
-    final inner = RRect.fromRectXY(rectProgress, 0, 0);
-    context.canvas.drawDRRect(outer, inner, paint);
+      context.canvas.drawRRect(rrect, paint);
+    } else {
+      final paint =
+          Paint()
+            ..color = canvasColor
+            ..isAntiAlias = true
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.0;
+
+      context.canvas.drawRRect(rrect, paint);
+    }
   }
 
-  //画 "勾"
   void _drawCheckMark(PaintingContext context, Rect rect) {
-    // 在画好背景后再画前景
     if (progress > bgAnimationInterval) {
-      //确定中间拐点位置
       final secondOffset = Offset(rect.left + rect.width / 2.5, rect.bottom - rect.height / 4);
-      // 第三个点的位置
       final lastOffset = Offset(rect.right - rect.width / 6, rect.top + rect.height / 4);
 
-      // 我们只对第三个点的位置做插值
       final _lastOffset =
           Offset.lerp(secondOffset, lastOffset, (progress - bgAnimationInterval) / (1 - bgAnimationInterval))!;
 
-      // 将三个点连起来
       final path =
           Path()
             ..moveTo(rect.left + rect.width / 7, rect.top + rect.height / 2)
@@ -120,8 +126,8 @@ class RenderCustomCheckbox extends RenderBox with RenderObjectAnimationMixin {
           Paint()
             ..isAntiAlias = true
             ..style = PaintingStyle.stroke
-            ..color = strokeColor
-            ..strokeWidth = strokeWidth;
+            ..color = tickColor
+            ..strokeWidth = tickWidth;
 
       context.canvas.drawPath(path, paint..style = PaintingStyle.stroke);
     }
@@ -129,21 +135,17 @@ class RenderCustomCheckbox extends RenderBox with RenderObjectAnimationMixin {
 
   @override
   void performLayout() {
-    // 如果父组件指定了固定宽高，则使用父组件指定的，否则宽高默认置为 25
     size = constraints.constrain(constraints.isTight ? Size.infinite : const Size(25, 25));
   }
 
-  // 必须置为true，否则不可以响应事件
   @override
   bool hitTestSelf(Offset position) => true;
 
-  // 只有通过点击测试的组件才会调用本方法
   @override
   void handleEvent(PointerEvent event, covariant BoxHitTestEntry entry) {
     if (event.down) {
       pointerId = event.pointer;
     } else if (pointerId == event.pointer) {
-      // 判断手指抬起时是在组件范围内的话才触发onChange
       if (size.contains(event.localPosition)) {
         onChanged?.call(!value);
       }
@@ -155,11 +157,9 @@ mixin RenderObjectAnimationMixin on RenderObject {
   double _progress = 0;
   int? _lastTimeStamp;
 
-  // 动画时长，子类可以重写
   Duration get duration => const Duration(milliseconds: 200);
   AnimationStatus _animationStatus = AnimationStatus.completed;
 
-  // 设置动画状态
   set animationStatus(AnimationStatus v) {
     if (_animationStatus != v) {
       markNeedsPaint();
@@ -175,7 +175,7 @@ mixin RenderObjectAnimationMixin on RenderObject {
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    doPaint(context, offset); // 调用子类绘制逻辑
+    doPaint(context, offset);
     _scheduleAnimation();
   }
 
@@ -185,8 +185,6 @@ mixin RenderObjectAnimationMixin on RenderObject {
         if (_lastTimeStamp != null) {
           double delta = (timeStamp.inMilliseconds - _lastTimeStamp!) / duration.inMilliseconds;
 
-          //在特定情况下，可能在一帧中连续的往frameCallback中添加了多次，导致两次回调时间间隔为0，
-          //这种情况下应该继续请求重绘。
           if (delta == 0) {
             markNeedsPaint();
             return;
@@ -209,6 +207,5 @@ mixin RenderObjectAnimationMixin on RenderObject {
     }
   }
 
-  // 子类实现绘制逻辑的地方
   void doPaint(PaintingContext context, Offset offset);
 }

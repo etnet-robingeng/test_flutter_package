@@ -31,7 +31,7 @@ class CustomCheckboxGroupState extends State<CustomCheckboxGroup> {
                     width: 20,
                     height: 20,
                     child: CustomCheckbox(
-                      strokeWidth: 2,
+                      tickWidth: 2,
                       radius: 2,
                       value: selectedItems.contains(item),
                       onChanged: (bool? value) {
