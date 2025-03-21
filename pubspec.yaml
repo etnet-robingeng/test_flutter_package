@@ -44,32 +44,12 @@ flutter:
   fonts:
     - family: PingFangTC
       fonts:
-        - asset: fonts/PingFangTC/PingFangTC-Light.otf
-        - asset: fonts/PingFangTC/PingFangTC-Regular.otf
-        - asset: fonts/PingFangTC/PingFangTC-Medium.otf
-        - asset: fonts/PingFangTC/PingFangTC-Semibold.otf
-        - asset: fonts/PingFangTC/PingFangTC-Thin.otf
-        - asset: fonts/PingFangTC/PingFangTC-Ultralight.otf
+        - asset: fonts/PingFangTC/PingFang.ttc
     - family: HarmonyOS_Sans
       fonts:
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf
         - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf
         - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf
         - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Black_Italic.ttf
-          style: italic
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Bold_Italic.ttf
-          style: italic
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Light_Italic.ttf
-          style: italic
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Medium_Italic.ttf
-          style: italic
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Regular_Italic.ttf
-          style: italic
-        - asset: fonts/HarmonyOS_Sans/HarmonyOS_Sans_Thin_Italic.ttf
-          style: italic
         
   #
   # For details regarding fonts in packages, see
