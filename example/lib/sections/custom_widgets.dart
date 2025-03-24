@@ -3,6 +3,7 @@ import 'package:app_family_materials/customCheckBoxGroup.dart';
 import 'package:app_family_materials/customRadioBtnGroup.dart';
 import 'package:app_family_materials/customButton.dart';
 import 'package:app_family_materials/customInputTextField.dart';
+import 'package:app_family_materials/customSwitchButton.dart';
 
 class CustomWidgetsShowPage extends StatefulWidget {
   const CustomWidgetsShowPage({super.key});
@@ -16,6 +17,7 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
   String selectedItem = '';
   String textFieldStr = '';
   bool isEditable = true;
+  bool switchValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,16 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
                   }
                 },
               ),
+              CustomSwitch(
+                value: switchValue,
+                isDisabled: !isEditable,
+                onChanged: (bool value) {
+                  setState(() {
+                    switchValue = value;
+                  });
+                },
+              ),
+              SizedBox(height: 15),
               CustomButton(
                 strValue: 'Dis/En-able TextField',
                 onPressed: () {
