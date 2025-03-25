@@ -73,13 +73,29 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
                 },
               ),
               SizedBox(height: 15),
-              CustomButton(
-                strValue: 'Dis/En-able TextField',
-                onPressed: () {
-                  setState(() {
-                    isEditable = !isEditable;
-                  });
-                },
+              Row(
+                children: [
+                  CustomButton(
+                    strValue: 'Dis/En-able TextField',
+                    onPressed: () {
+                      setState(() {
+                        isEditable = !isEditable;
+                      });
+                    },
+                  ),
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: CustomButton(
+                      icon: Icons.add_circle_outline,
+                      strValue: 'Icon Button',
+                      onPressed: () {
+                        setState(() {
+                          isEditable = !isEditable;
+                        });
+                      },
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

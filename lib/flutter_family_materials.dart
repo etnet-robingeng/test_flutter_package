@@ -12,3 +12,4 @@ export 'customCheckBoxGroup.dart';
 export 'customRadioBtnGroup.dart';
 export 'customInputTextField.dart';
 export 'customSwitchButton.dart';
+export 'model/navBarItem.dart';
