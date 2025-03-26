@@ -1,9 +1,14 @@
+import 'package:app_family_materials/chart/chartPoint.dart';
+import 'package:app_family_materials/chart/miniChart.dart';
+import 'package:app_family_materials/quoteRowWithChart.dart';
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/customCheckBoxGroup.dart';
 import 'package:app_family_materials/customRadioBtnGroup.dart';
 import 'package:app_family_materials/customButton.dart';
 import 'package:app_family_materials/customInputTextField.dart';
 import 'package:app_family_materials/customSwitchButton.dart';
+
+import '../mockData.dart';
 
 class CustomWidgetsShowPage extends StatefulWidget {
   const CustomWidgetsShowPage({super.key});
@@ -21,6 +26,8 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<ChartPoint> chartData = MockData.getMiniChartData();
+
     return Scaffold(
       appBar: AppBar(title: const Text('Widgets Exhibition'), backgroundColor: Theme.of(context).colorScheme.primary),
       body: SingleChildScrollView(
@@ -97,6 +104,44 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
                   ),
                 ],
               ),
+              SizedBox(height: 15),
+              Divider(height: 1),
+              QuoteRowWithChart(
+                stockCode: '00700',
+                stockName: 'Tencent',
+                market: 'HK',
+                nominal: '503.500',
+                perChange: '0.299%',
+                chartData: chartData,
+              ),
+              Divider(height: 1),
+              QuoteRowWithChart(
+                stockCode: '00700',
+                stockName: '騰訊控股',
+                market: 'HK',
+                nominal: '503.500',
+                perChange: '+0.299%',
+                chartData: chartData,
+              ),
+              Divider(height: 1),
+              QuoteRowWithChart(
+                stockCode: '09988',
+                stockName: '阿里巴巴-W',
+                market: 'HK',
+                nominal: '503.500',
+                perChange: '-0.299%',
+                chartData: chartData,
+              ),
+              Divider(height: 1),
+              QuoteRowWithChart(
+                stockCode: '03690',
+                stockName: '美團-W',
+                market: 'HK',
+                nominal: '503.500',
+                perChange: '-0.299%',
+                chartData: chartData,
+              ),
+              Divider(height: 1),
             ],
           ),
         ),
