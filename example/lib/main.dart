@@ -65,15 +65,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    
     return Scaffold(
+      key: scaffoldKey,
       extendBody: true,
-      appBar: ThemeAppBar(title: widget.title),
+      appBar: ThemeAppBar(title: widget.title, scaffoldKey: scaffoldKey),
       body: ListView(
         children: [
           _navigationListTile('Custom Widgets', const CustomWidgetsShowPage()),
           _navigationListTile('Text Styles', const TextStylePage()),
           _navigationListTile('Shadows & Blurs', const ShadowsBlursStylePage()),
-          _navigationListTile('Theme Preview', const ThemePreview()),
+          _navigationListTile('Theme Preview', ThemePreview()),
         ],
       ),
       bottomNavigationBar: SafeArea(

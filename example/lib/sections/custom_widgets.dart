@@ -28,9 +28,11 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
   @override
   Widget build(BuildContext context) {
     List<ChartPoint> chartData = MockData.getMiniChartData();
-
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    
     return Scaffold(
-      appBar: const ThemeAppBar(title: 'Widgets Exhibition'),
+      key: scaffoldKey,
+      appBar: ThemeAppBar(title: 'Widgets Exhibition', scaffoldKey: scaffoldKey),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

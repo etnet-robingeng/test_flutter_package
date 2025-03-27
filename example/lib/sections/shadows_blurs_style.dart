@@ -9,8 +9,11 @@ class ShadowsBlursStylePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    
     return Scaffold(
-      appBar: const ThemeAppBar(title: 'Shadows & Blurs'),
+      key: scaffoldKey,
+      appBar: ThemeAppBar(title: 'Shadows & Blurs', scaffoldKey: scaffoldKey),
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(0),

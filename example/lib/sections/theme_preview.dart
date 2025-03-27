@@ -9,8 +9,11 @@ class ThemePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    
     return Scaffold(
-      appBar: const ThemeAppBar(title: 'Theme Preview'),
+      key: scaffoldKey,
+      appBar: ThemeAppBar(title: 'Theme Preview', scaffoldKey: scaffoldKey),
       body: ColorSchemeView(colorScheme: Theme.of(context).colorScheme),
     );
   }
@@ -18,7 +21,9 @@ class ThemePreview extends StatelessWidget {
 
 class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const ThemeAppBar({super.key, this.title = ''});
+  final GlobalKey<ScaffoldState> scaffoldKey;
+  bool openSettings = false;
+  ThemeAppBar({super.key, this.title = '', required this.scaffoldKey, this.openSettings = false});
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +38,15 @@ class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () {
-        showModalBottomSheet(
-          context: context,
-          builder: (BuildContext context) {
-            return const SettingsModal();
-          },
-        );
+        if (!openSettings) {
+          openSettings = true;
+          scaffoldKey.currentState?.showBottomSheet(
+            (context) => const SettingsModal(),
+          );
+        } else {
+          openSettings = false;
+          Navigator.of(context).pop();
+        }
       },
     );
   }
