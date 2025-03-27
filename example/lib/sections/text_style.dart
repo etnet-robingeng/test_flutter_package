@@ -1,8 +1,7 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 import 'package:single_child_two_dimensional_scroll_view/single_child_two_dimensional_scroll_view.dart';
 import 'package:app_family_materials/family_textStyles.dart';
+import 'theme_preview.dart' show ThemeAppBar;
 
 class TextStylePage extends StatelessWidget {
   const TextStylePage({super.key});
@@ -10,7 +9,7 @@ class TextStylePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Text Styles'), backgroundColor: Theme.of(context).colorScheme.primary),
+      appBar: const ThemeAppBar(title: 'Text Styles'),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildTwoDimensionalScrollView(

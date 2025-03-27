@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:app_family_materials/family_shadows.dart';
 import 'package:app_family_materials/family_colors.dart';
+import 'theme_preview.dart' show ThemeAppBar;
 
 class ShadowsBlursStylePage extends StatelessWidget {
   const ShadowsBlursStylePage({super.key});
@@ -9,10 +10,7 @@ class ShadowsBlursStylePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shadows & Blurs'),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-      ),
+      appBar: const ThemeAppBar(title: 'Shadows & Blurs'),
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(0),

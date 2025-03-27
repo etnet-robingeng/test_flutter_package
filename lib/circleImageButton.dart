@@ -20,7 +20,7 @@ class CircleImageButton extends StatelessWidget {
         child: Container(
           height: height,
           width: double.infinity,
-          decoration: BoxDecoration(color: FamilyColors.getPrimaryColor(600), borderRadius: BorderRadius.circular(30)),
+          decoration: BoxDecoration(color: FamilyColors.primary600, borderRadius: BorderRadius.circular(30)),
           child:
               loading
                   ? Center(child: CircularProgressIndicator(color: Colors.white))

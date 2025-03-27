@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 import 'controllers/theme_controller.dart';
 import 'sections/custom_widgets.dart';
 import 'sections/text_style.dart';
-import 'sections/theme_style.dart';
 import 'sections/shadows_blurs_style.dart';
+import 'sections/theme_preview.dart' show ThemeAppBar, ThemePreview;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,8 +31,6 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // Initialize the ThemeController with the default theme
-    ThemeController.themeNotifier.value = FamilyThemes.deepPurple;
   }
 
   @override
@@ -69,13 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      appBar: AppBar(title: Text(widget.title), backgroundColor: Theme.of(context).colorScheme.primary),
+      appBar: ThemeAppBar(title: widget.title),
       body: ListView(
         children: [
           _navigationListTile('Custom Widgets', const CustomWidgetsShowPage()),
           _navigationListTile('Text Styles', const TextStylePage()),
-          _navigationListTile('Theme Styles', const ThemeStylePage()),
           _navigationListTile('Shadows & Blurs', const ShadowsBlursStylePage()),
+          _navigationListTile('Theme Preview', const ThemePreview()),
         ],
       ),
       bottomNavigationBar: SafeArea(

@@ -1,5 +1,4 @@
 import 'package:app_family_materials/chart/chartPoint.dart';
-import 'package:app_family_materials/chart/miniChart.dart';
 import 'package:app_family_materials/openAIWidget.dart';
 import 'package:app_family_materials/quoteRowWithChart.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:app_family_materials/customRadioBtnGroup.dart';
 import 'package:app_family_materials/customButton.dart';
 import 'package:app_family_materials/customInputTextField.dart';
 import 'package:app_family_materials/customSwitchButton.dart';
+import 'theme_preview.dart' show ThemeAppBar;
 
 import '../mockData.dart';
 
@@ -30,7 +30,7 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
     List<ChartPoint> chartData = MockData.getMiniChartData();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Widgets Exhibition'), backgroundColor: Theme.of(context).colorScheme.primary),
+      appBar: const ThemeAppBar(title: 'Widgets Exhibition'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

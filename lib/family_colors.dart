@@ -88,7 +88,18 @@ class FamilyColors {
   static const Color system800 = Color(0xff00438C);
   static const Color system900 = Color(0xff00336B);
 
-  //
+  static const Color violet50 = Color(0xffF3F2FC);
+  static const Color violet100 = Color(0xffD8D7F7);
+  static const Color violet200 = Color(0xffC6C3F3);
+  static const Color violet300 = Color(0xffABA8ED);
+  static const Color violet400 = Color(0xff9B97E9);
+  static const Color violet500 = Color(0xff827DE4);
+  static const Color violet600 = Color(0xff7672CF);
+  static const Color violet700 = Color(0xff5C59A2);
+  static const Color violet800 = Color(0xff48457D);
+  static const Color violet900 = Color(0xff373560);
+
+  // shadow
   static const Color shadowA3 = Color(0x080A0D12);
   static const Color shadowA5 = Color(0x0D0A0D12);
   static const Color shadowA6 = Color(0x0F0A0D12);
@@ -111,16 +122,6 @@ class FamilyColors {
     900: primary900,
   };
 
-  static Color getPrimaryColor(int index) {
-    if (primaryColors.containsKey(index)) {
-      return primaryColors[index]!;
-    } else {
-      throw ArgumentError(
-        'Invalid index: $index. Supported values are 50, 100, 200, 300, 400, 500, 600, 700, 800, 900.',
-      );
-    }
-  }
-
   static final Map<int, Color> secondaryColors = {
     50: secondary50,
     100: secondary100,
@@ -134,15 +135,70 @@ class FamilyColors {
     900: secondary900,
   };
 
-  static Color getSecondaryColor(int index) {
-    if (secondaryColors.containsKey(index)) {
-      return secondaryColors[index]!;
-    } else {
-      throw ArgumentError(
-        'Invalid index: $index. Supported values are 50, 100, 200, 300, 400, 500, 600, 700, 800, 900.',
-      );
-    }
-  }
+  static final Map<int, Color> errorColors = {
+    50: error50,
+    100: error100,
+    200: error200,
+    300: error300,
+    400: error400,
+    500: error500,
+    600: error600,
+    700: error700,
+    800: error800,
+    900: error900,
+  };
+
+  static final Map<int, Color> warningColors = {
+    50: warning50,
+    100: warning100,
+    200: warning200,
+    300: warning300,
+    400: warning400,
+    500: warning500,
+    600: warning600,
+    700: warning700,
+    800: warning800,
+    900: warning900,
+  };
+
+  static final Map<int, Color> successColors = {
+    50: success50,
+    100: success100,
+    200: success200,
+    300: success300,
+    400: success400,
+    500: success500,
+    600: success600,
+    700: success700,
+    800: success800,
+    900: success900,
+  };
+
+  static final Map<int, Color> systemColors = {
+    50: system50,
+    100: system100,
+    200: system200,
+    300: system300,
+    400: system400,
+    500: system500,
+    600: system600,
+    700: system700,
+    800: system800,
+    900: system900,
+  };
+
+  static final Map<int, Color> violetColors = {
+    50: violet50,
+    100: violet100,
+    200: violet200,
+    300: violet300,
+    400: violet400,
+    500: violet500,
+    600: violet600,
+    700: violet700,
+    800: violet800,
+    900: violet900,
+  };
 }
 
 class ChartStyle {
@@ -151,4 +207,46 @@ class ChartStyle {
   static const double topPadding = 30.0;
 
   List<String>? dateTimeFormat;
+}
+
+enum FamilyColorScheme {
+  system500(FamilyColors.system500),
+  violet500(FamilyColors.violet500);
+
+  // setter
+  const FamilyColorScheme(this.rawValue);
+  final Color rawValue;
+
+  // getter
+  static FamilyColorScheme fromValue(Color value) {
+    return FamilyColorScheme.values.firstWhere(
+      (e) => e.rawValue == value,
+      orElse: () => FamilyColorScheme.system500,
+    );
+  }
+}
+
+enum FamilyColorsIndex {
+  c50(50),
+  c100(100),
+  c200(200),
+  c300(300),
+  c400(400),
+  c500(500),
+  c600(600),
+  c700(700),
+  c800(800),
+  c900(900);
+
+  // setter
+  const FamilyColorsIndex(this.rawValue);
+  final int rawValue;
+
+  // getter
+  static FamilyColorsIndex fromValue(int value) {
+    return FamilyColorsIndex.values.firstWhere(
+      (e) => e.rawValue == value,
+      orElse: () => FamilyColorsIndex.c500,
+    );
+  }
 }

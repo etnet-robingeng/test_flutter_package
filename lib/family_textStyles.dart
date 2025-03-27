@@ -1,5 +1,4 @@
 // ignore_for_file: constant_identifier_names
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show TextStyle, FontWeight;
