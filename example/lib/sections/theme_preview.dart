@@ -22,8 +22,7 @@ class ThemePreview extends StatelessWidget {
 class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final GlobalKey<ScaffoldState> scaffoldKey;
-  bool openSettings = false;
-  ThemeAppBar({super.key, this.title = '', required this.scaffoldKey, this.openSettings = false});
+  const ThemeAppBar({super.key, this.title = '', required this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +37,9 @@ class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () {
-        if (!openSettings) {
-          openSettings = true;
-          scaffoldKey.currentState?.showBottomSheet(
-            (context) => const SettingsModal(),
-          );
-        } else {
-          openSettings = false;
-          Navigator.of(context).pop();
-        }
+        scaffoldKey.currentState?.showBottomSheet(
+          (context) => const SettingsModal(),
+        );
       },
     );
   }
