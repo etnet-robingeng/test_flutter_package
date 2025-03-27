@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
+import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show TextStyle, FontWeight;
 import 'family_sizes.dart';
 
@@ -45,7 +47,7 @@ class FamilyTextStyle {
     fontSize: FamilySizesBody.fontSizeM,
     fontWeight: FontWeight.w600,
     height: FamilySizeBodyHeight.fontHeightM,
-    fontFamily: fontFamily, 
+    fontFamily: fontFamily,
   );
 
   static const TextStyle LBodyRegular = TextStyle(
@@ -82,7 +84,7 @@ class FamilyTextStyle {
     height: FamilySizeHeadlineHeight.fontHeightS,
     fontFamily: fontFamily,
   );
-  
+
   static const TextStyle SHeadlineSemiBold = TextStyle(
     fontSize: FamilySizesHeadline.fontSizeS,
     fontWeight: FontWeight.w600,
@@ -175,7 +177,7 @@ class FamilyTextStyleEN extends FamilyTextStyle {
     fontSize: FamilySizesBody.fontSizeM,
     fontWeight: FontWeight.w600,
     height: FamilySizeBodyHeight.fontHeightM,
-    fontFamily: fontFamily, 
+    fontFamily: fontFamily,
   );
 
   static const TextStyle LBodyRegular = TextStyle(
@@ -212,7 +214,7 @@ class FamilyTextStyleEN extends FamilyTextStyle {
     height: FamilySizeHeadlineHeight.fontHeightS,
     fontFamily: fontFamily,
   );
-  
+
   static const TextStyle SHeadlineSemiBold = TextStyle(
     fontSize: FamilySizesHeadline.fontSizeS,
     fontWeight: FontWeight.w600,
@@ -260,5 +262,5 @@ class FamilyTextStyleEN extends FamilyTextStyle {
     fontWeight: FontWeight.w600,
     height: FamilySizeHeadlineHeight.fontHeightL,
     fontFamily: fontFamily,
-  );  
+  );
 }

@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:single_child_two_dimensional_scroll_view/single_child_two_dimensional_scroll_view.dart';
 import 'package:app_family_materials/family_textStyles.dart';
@@ -8,10 +10,7 @@ class TextStylePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Text Styles'),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-      ),
+      appBar: AppBar(title: const Text('Text Styles'), backgroundColor: Theme.of(context).colorScheme.primary),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildTwoDimensionalScrollView(
@@ -20,23 +19,15 @@ class TextStylePage extends StatelessWidget {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildHeadlineStyles(),
-                  const SizedBox(height: 16),
-                  _buildBodyStyles(),
-                ],
+                children: [_buildHeadlineStyles(), const SizedBox(height: 16), _buildBodyStyles()],
               ),
               const SizedBox(width: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildHeadlineStylesEN(),
-                  const SizedBox(height: 16),
-                  _buildBodyStylesEN(),
-                ],
-              )
+                children: [_buildHeadlineStylesEN(), const SizedBox(height: 16), _buildBodyStylesEN()],
+              ),
             ],
-          )
+          ),
         ),
       ),
     );
