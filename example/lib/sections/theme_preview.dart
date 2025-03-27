@@ -8,12 +8,9 @@ class ThemePreview extends StatelessWidget {
   const ThemePreview({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
-    
+  Widget build(BuildContext context) {    
     return Scaffold(
-      key: scaffoldKey,
-      appBar: ThemeAppBar(title: 'Theme Preview', scaffoldKey: scaffoldKey),
+      appBar: ThemeAppBar(title: 'Theme Preview'),
       body: ColorSchemeView(colorScheme: Theme.of(context).colorScheme),
     );
   }
@@ -21,8 +18,8 @@ class ThemePreview extends StatelessWidget {
 
 class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final GlobalKey<ScaffoldState> scaffoldKey;
-  const ThemeAppBar({super.key, this.title = '', required this.scaffoldKey});
+  final GlobalKey<ScaffoldState>? scaffoldKey;
+  const ThemeAppBar({super.key, this.title = '', this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +34,17 @@ class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () {
-        scaffoldKey.currentState?.showBottomSheet(
-          (context) => const SettingsModal(),
-        );
+        if (scaffoldKey != null) {
+          scaffoldKey?.currentState?.showBottomSheet(
+            enableDrag: true,
+            (context) => const SettingsModal(),
+          );
+        } else {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => const SettingsModal(),
+          );
+        }
       },
     );
   }
@@ -273,6 +278,12 @@ class ColorSchemeView extends StatelessWidget {
             colorScheme.inverseSurface,
             colorScheme.onInverseSurface,
           ),
+        ],
+      ),
+      ColorGroup(
+        children: <ColorChip>[
+          ColorChip('warning', ThemeController.currentTheme.warning, null),
+          ColorChip('success', ThemeController.currentTheme.success, null),
         ],
       ),
     ];

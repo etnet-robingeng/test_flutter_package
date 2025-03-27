@@ -50,6 +50,9 @@ class FamilyThemes {
         primarySwatch: Colors.yellow,
         colorScheme: ColorScheme.fromSeed(
           seedColor: primaryColor,
+          primary: primaryColor,
+          secondary: FamilyColors.secondaryColors[index.rawValue] ?? FamilyColors.secondary500,
+          error: FamilyColors.errorColors[index.rawValue] ?? FamilyColors.error500,
           brightness: brightness,
         ),
         canvasColor: FamilyColors.neutral50,
@@ -71,34 +74,4 @@ class FamilyThemes {
       success: FamilyColors.successColors[index.rawValue] ?? FamilyColors.success500,
     );
   }
-
-  static FamilyThemes nor = FamilyThemes(
-    theme: ThemeData(
-      primarySwatch: Colors.yellow,
-      textTheme: textTheme,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.pink,
-        brightness: Brightness.dark,
-        primary: FamilyColors.primary500,
-      ),
-      canvasColor: FamilyColors.neutral50,
-      highlightColor: Colors.transparent,
-      splashColor: Colors.transparent,
-      disabledColor: FamilyColors.neutral100,
-      cardTheme: CardThemeData(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0))),
-      /* *
-       Card(
-          shape: Theme.of(context).cardTheme.shape,
-          child: const SizedBox(...),
-          ),
-    * */
-    ),
-    colorScheme: FamilyColors.primary500,
-    index: 500,
-    primary: FamilyColors.primary500,
-    secondary: FamilyColors.secondary500,
-    error: FamilyColors.error500,
-    warning: FamilyColors.warning500,
-    success: FamilyColors.success500,
-  );
 }
