@@ -50,11 +50,11 @@ class CustomButton extends StatelessWidget {
         children: [
           Icon(icon, color: contentColor),
           const SizedBox(width: 8),
-          Text(strValue, style: TextStyle(color: contentColor)),
+          Text(strValue, style: TextStyle(color: contentColor, fontSize: textSize)),
         ],
       );
     } else {
-      return Center(child: Text(strValue, style: TextStyle(color: contentColor)));
+      return Center(child: Text(strValue, style: TextStyle(color: contentColor, fontSize: textSize)));
     }
   }
 }

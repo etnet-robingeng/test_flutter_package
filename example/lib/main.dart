@@ -11,9 +11,7 @@ import 'sections/theme_preview.dart' show ThemeAppBar, ThemePreview;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge).then(
-        (_) => runApp(MyApp()),
-  );
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge).then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatefulWidget {

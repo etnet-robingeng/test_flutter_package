@@ -12,13 +12,22 @@ class CustomNavBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 70,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(0), boxShadow: []),
       child: Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
         child: BottomNavigationBar(
           backgroundColor: Theme.of(context).primaryColor,
           currentIndex: selectedIndex,
-          items: barItems.map((item) => BottomNavigationBarItem(icon: item.icon, label: item.label)).toList(),
+          items:
+              barItems
+                  .map(
+                    (item) => BottomNavigationBarItem(
+                      icon: Padding(padding: EdgeInsets.only(bottom: 5), child: item.icon),
+                      label: item.label,
+                    ),
+                  )
+                  .toList(),
           onTap: onTap,
           selectedItemColor: Theme.of(context).secondaryHeaderColor,
           unselectedItemColor: Theme.of(context).unselectedWidgetColor,
