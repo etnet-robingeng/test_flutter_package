@@ -34,7 +34,11 @@ class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () {
-        showModalBottomSheet(enableDrag: true, context: context, builder: (context) => const SettingsModal());
+        showModalBottomSheet(
+          enableDrag: true, 
+          barrierColor: Colors.black.withAlpha(1),
+          context: context, 
+          builder: (context) => const SettingsModal());
       },
     );
   }
