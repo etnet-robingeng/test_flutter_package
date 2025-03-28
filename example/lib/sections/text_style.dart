@@ -8,11 +8,8 @@ class TextStylePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
-    
     return Scaffold(
-      key: scaffoldKey,
-      appBar: ThemeAppBar(title: 'Text Styles', scaffoldKey: scaffoldKey),
+      appBar: ThemeAppBar(title: 'Text Styles'),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildTwoDimensionalScrollView(

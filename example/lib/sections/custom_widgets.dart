@@ -34,11 +34,9 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
   @override
   Widget build(BuildContext context) {
     List<ChartPoint> chartData = MockData.getMiniChartData();
-    final scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      key: scaffoldKey,
-      appBar: ThemeAppBar(title: 'Widgets Exhibition', scaffoldKey: scaffoldKey),
+      appBar: ThemeAppBar(title: 'Widgets Exhibition'),
       body: CustomScrollView(
         slivers: [
           // Add the app bar to the CustomScrollView.

@@ -18,9 +18,8 @@ class ThemePreview extends StatelessWidget {
 
 class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final GlobalKey<ScaffoldState>? scaffoldKey;
 
-  const ThemeAppBar({super.key, this.title = '', this.scaffoldKey});
+  const ThemeAppBar({super.key, this.title = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +34,7 @@ class ThemeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return IconButton(
       icon: const Icon(Icons.settings),
       onPressed: () {
-        if (scaffoldKey != null) {
-          scaffoldKey?.currentState?.showBottomSheet(enableDrag: true, (context) => const SettingsModal());
-        } else {
-          showModalBottomSheet(context: context, builder: (context) => const SettingsModal());
-        }
+        showModalBottomSheet(enableDrag: true, context: context, builder: (context) => const SettingsModal());
       },
     );
   }
@@ -222,10 +217,10 @@ class _SettingsModalState extends State<SettingsModal> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: 300),
+      constraints: BoxConstraints(maxHeight: 360),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: ListView(
+        child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -268,7 +263,7 @@ class _SettingsModalState extends State<SettingsModal> {
                   const VerticalDivider(width: 20, thickness: 1, color: Colors.grey),
                   Expanded(
                     child: SizedBox(
-                      height: 180,
+                      height: 210,
                       child: ListView.separated(
                         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                         itemCount: colorIndices.length,
