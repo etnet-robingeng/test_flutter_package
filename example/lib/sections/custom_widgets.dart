@@ -1,5 +1,6 @@
 import 'package:app_family_materials/chart/chartPoint.dart';
 import 'package:app_family_materials/family_colors.dart';
+import 'package:app_family_materials/icons/familyIconSvg.dart';
 import 'package:app_family_materials/openAIWidget.dart';
 import 'package:app_family_materials/quoteRowWithChart.dart';
 import 'package:flutter/material.dart';
@@ -221,7 +222,7 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
                       },
                       lineOne: '早晨！',
                       lineTwo: '你可以問我任何關於股票嘅嘢',
-                      icon: Icons.star,
+                      icon: FamilyIconsSvg.starSvg,
                     ),
                     SizedBox(height: 15),
                   ],
@@ -237,11 +238,11 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
           showUnselectedLabels: true,
           backgroundColor: Theme.of(context).colorScheme.surface,
           unselectedFontSize: selectedTextSize,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: '首頁'),
-            BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: '新聞'),
-            BottomNavigationBarItem(icon: Icon(Icons.ac_unit_sharp), label: 'AI'),
-            BottomNavigationBarItem(icon: Icon(Icons.photo_camera_front), label: '播放室'),
+          items: <BottomNavigationBarItem>[
+            const BottomNavigationBarItem(icon: Icon(Icons.home), label: '首頁'),
+            const BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: '新聞'),
+            const BottomNavigationBarItem(icon: Icon(Icons.ac_unit_sharp), label: 'AI'),
+            const BottomNavigationBarItem(icon: Icon(Icons.photo_camera_front), label: '播放室'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: '我'),
           ],
           currentIndex: navBarIndex,

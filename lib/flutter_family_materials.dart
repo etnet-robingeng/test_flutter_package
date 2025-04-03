@@ -19,3 +19,6 @@ export 'model/navBarItem.dart';
 
 export 'chart/miniChart.dart';
 export 'chart/chartPoint.dart';
+
+export 'icons/familyIconSvg.dart';
+export 'icons/family_icons_icons.dart';

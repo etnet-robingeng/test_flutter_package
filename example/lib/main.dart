@@ -1,4 +1,5 @@
 import 'package:app_family_materials/customNavBottomBar.dart';
+import 'package:app_family_materials/icons/family_icons_icons.dart';
 import 'package:app_family_materials/model/navBarItem.dart';
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/family_themes.dart';
@@ -58,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
     NavBarItem(label: '新聞', icon: Icon(Icons.bar_chart)),
     NavBarItem(label: 'AI', icon: Icon(Icons.ac_unit_sharp)),
     NavBarItem(label: '播放室', icon: Icon(Icons.photo_camera_front)),
-    NavBarItem(label: '我', icon: Icon(Icons.person)),
+    NavBarItem(label: '我', icon: Icon(FamilyIcons.star)),
   ];
 
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
       appBar: ThemeAppBar(title: widget.title),

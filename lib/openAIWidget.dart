@@ -10,7 +10,7 @@ class OpenAiWidget extends StatelessWidget {
   final double height;
   final String lineOne;
   final String lineTwo;
-  final IconData? icon;
+  final Widget? icon;
 
   const OpenAiWidget({
     super.key,
@@ -66,7 +66,7 @@ class OpenAiWidget extends StatelessWidget {
             ],
           ),
         ),
-        Container(padding: EdgeInsets.only(right: 20), child: Icon(icon)),
+        Container(padding: EdgeInsets.only(right: 20), child: icon),
       ],
     );
   }
