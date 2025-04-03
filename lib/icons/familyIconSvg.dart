@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+class SvgPath {
+  static const String starSvg = '/star.svg';
+}
+
 class FamilyIconsSvg {
   static const String _basePath = 'assets/icons';
   static const String fontFamily = 'FamilyIcons';
 
   static const double _defaultSize = 24.0;
 
-  static Widget get starSvg => _buildSvg('$_basePath/star.svg', size: 42);
+  static Widget get starSvg => _buildSvg('$_basePath${SvgPath.starSvg}', size: 42);
 
   static Widget _buildSvg(String path, {double size = _defaultSize, Color? color}) {
     return SvgPicture.asset(
@@ -25,4 +29,6 @@ class FamilyIconsSvg {
     height: size,
     child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[300]!)),
   );
+
+
 }

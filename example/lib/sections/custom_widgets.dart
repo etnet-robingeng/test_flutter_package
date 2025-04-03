@@ -1,5 +1,6 @@
 import 'package:app_family_materials/chart/chartPoint.dart';
 import 'package:app_family_materials/family_colors.dart';
+import 'package:app_family_materials/flutter_family_materials.dart';
 import 'package:app_family_materials/icons/familyIconSvg.dart';
 import 'package:app_family_materials/openAIWidget.dart';
 import 'package:app_family_materials/quoteRowWithChart.dart';
@@ -33,7 +34,7 @@ class _CustomWidgetsShowPageState extends State<CustomWidgetsShowPage> {
   final List<double> _textSizeOptions = [12.0, 14.0, 16.0, 18.0, 20.0, 24.0];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext buildContext) {
     List<ChartPoint> chartData = MockData.getMiniChartData();
 
     return Scaffold(

@@ -19,7 +19,7 @@ class FamilyIcons {
   FamilyIcons._();
 
   static const _kFontFam = 'FamilyIcons';
-  static const String? _kFontPkg = null;
+  static const String _kFontPkg = 'app_family_materials';
 
   static const IconData star = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
