@@ -1,6 +1,7 @@
 import 'package:app_family_materials/customNavBottomBar.dart';
 import 'package:app_family_materials/icons/family_icons_icons.dart';
 import 'package:app_family_materials/model/navBarItem.dart';
+import 'package:example/sections/haptic_feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:app_family_materials/family_themes.dart';
 import 'package:flutter/services.dart';
@@ -73,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _navigationListTile('Text Styles', const TextStylePage()),
           _navigationListTile('Shadows & Blurs', const ShadowsBlursStylePage()),
           _navigationListTile('Theme Preview', ThemePreview()),
+          _navigationListTile('Haptic Feedback', HapticFeedbackPage())
         ],
       ),
       bottomNavigationBar: SafeArea(
